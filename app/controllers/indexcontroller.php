@@ -6,6 +6,7 @@ class IndexController extends AbstractController
 {
     public function defaultAction()
     {
-        echo "Index Controller => default Action";
+        //echo "Index Controller => default Action";
+        $this->_view();
     }
 }
