@@ -25,6 +25,9 @@ class FrontController
         return $this;
     }
 
+    /**
+     * @var \MVC\Controllers\AbstractController $controller
+     */
     public function dispatch()
     {
         $controllerClass = "MVC\\Controllers\\" . ucfirst($this->_controller) . "Controller";
@@ -34,6 +37,9 @@ class FrontController
         if (!method_exists($controllerClass, $actionName))
             $actionName = 'notFoundAction';
         $controller = new $controllerClass();
+        $controller->setController($this->_controller);
+        $controller->setAction($this->_action);
+        $controller->setParams($this->_params);
         $controller->$actionName();
     }
 }
