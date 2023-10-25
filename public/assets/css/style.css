@@ -1,0 +1,24 @@
+input{
+    display: block;
+    font-size: 1rem;
+    padding: 10px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+input[type="submit"], button{
+    border: unset;
+    outline: unset;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+}
