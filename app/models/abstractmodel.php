@@ -19,9 +19,9 @@ class AbstractModel
 
     private static $db;
 
-    public static $tableName;
-    public static $tableSchema;
-    public static $primaryKey;
+    protected static $tableName;
+    protected static $tableSchema;
+    protected static $primaryKey;
 
     private function prepareValues(\PDOStatement &$stmt)
     {
