@@ -9,7 +9,7 @@ class AbstractController
     protected $_controller;
     protected $_action;
     protected $_params;
-
+    protected array $_data = [];
     public function notFoundAction()
     {
         echo "Sorry this page not found";
@@ -31,6 +31,7 @@ class AbstractController
 
     public function _view()
     {
+        extract($this->_data);
         $view = VIEWS_PATH . $this->_controller . DS . $this->_action . ".view.php";
         if ($this->_action == FrontController::NOT_FOUND_ACTION)
             include VIEWS_PATH . "notfound/notfound.view.php";
