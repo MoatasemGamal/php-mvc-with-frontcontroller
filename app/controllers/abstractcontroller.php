@@ -12,6 +12,7 @@ class AbstractController
     protected array $_data = [];
     public function notFoundAction()
     {
+        $this->_action = FrontController::NOT_FOUND_ACTION;
         echo "Sorry this page not found";
         $this->_view();
     }
