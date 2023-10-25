@@ -8,3 +8,11 @@ if (!function_exists("pre")) {
                 echo "</pre>";
         }
 }
+if (!function_exists("redirect")) {
+        function redirect($path)
+        {
+                session_write_close();
+                header("Location: $path");
+                exit;
+        }
+}
